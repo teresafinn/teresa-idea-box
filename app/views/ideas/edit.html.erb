@@ -1,0 +1,15 @@
+<h1>Edit Your Idea</h1>
+
+<h2>Please enter your changes:</h2>
+<%= form_for @idea do |f| %>
+  <%= f.label "Title:" %>
+  <%= f.text_field  :title %><br/>
+
+  <%= f.label "Description:" %>
+  <%= f.text_field  :description %><br/>
+
+  <%= f.label "Category:" %>
+  <%= f.collection_select :category_id, Category.all, :id, :group %><br/>
+
+  <%= f.submit      "Update" %>
+<% end %>

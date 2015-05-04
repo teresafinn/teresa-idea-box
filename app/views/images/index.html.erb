@@ -1,0 +1,15 @@
+<h1>Image List</h1>
+
+
+<ul>
+  <% @images.each do |image| %>
+  <li>
+    <%= image.name %>
+    (<%= image.url %>)
+    <%= link_to "Delete", image, method: :delete %>
+  </li>
+  <% end %>
+
+</ul>
+
+<%= link_to "Add Image", new_image_path %>

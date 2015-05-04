@@ -1,0 +1,10 @@
+<h1>Add a New Category</h1>
+
+<h2>Please enter your image:</h2>
+<%= form_for @category do |f| %>
+  <%= f.label "Group:" %>
+  <%= f.text_field  :group %><br/>
+
+  <%= f.submit      "Add Category" %>
+<% end %>
+

@@ -1,0 +1,14 @@
+<h1>Category List</h1>
+
+
+<ul>
+  <% @categories.each do |category| %>
+  <li>
+    <%= category.group %>
+    <%= link_to "Delete", category, method: :delete %>
+  </li>
+  <% end %>
+
+</ul>
+
+<%= link_to "Add Category", new_category_path %>

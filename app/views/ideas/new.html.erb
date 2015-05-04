@@ -1,0 +1,19 @@
+<h1>Add a New Idea</h1>
+
+<h2>Please enter your idea:</h2>
+<%= form_for @idea do |f| %>
+  <%= f.label "Title:" %>
+  <%= f.text_field  :title %><br/>
+
+  <%= f.label "Description:" %>
+  <%= f.text_field  :description %><br/>
+
+  <%= f.label "Category:" %>
+  <%= f.collection_select :category_id, Category.all, :id, :group %><br/>
+
+  <%= f.label "Image:" %>
+  <%= f.collection_select :image_id, Image.all, :id, :name %><br/>
+
+  <%= f.submit      "Create" %>
+<% end %>
+

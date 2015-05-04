@@ -1,0 +1,39 @@
+<h1>Welcome to your ideas page, <%= @user.username%>!</h1>
+<% if notice %>
+  <p id="success_notice"><%= notice %></p>
+<% end %>
+<h2>Ideas:</h2>
+<!-- find the ideas in the database associated with this user. -->
+
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Images</th>
+  </tr>
+  <% @user.ideas.each do |idea| %>
+  <tr>
+      <td><%= idea.title %></td>
+      <td><%= idea.description %></td>
+      <td><%= idea.category.group if idea.category  %></td>
+      <td><%= image_tag(idea.image.url, size: "48x48") if idea.image %></td>
+      <td><%= link_to "Edit", edit_idea_path(idea) %></td>
+      <td><%= link_to "Delete", idea, method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
+
+<p>
+ <%= link_to "Create New Idea", new_idea_path  %>
+</p>
+
+
+
+<!-- print out their title -->
+<!-- make the titles dynamically linked so you can click and it will display all info about that idea -->
+<!-- include option to make a new idea at bottom of page -->
+<!-- include option to delete ideas -->
+<!-- include option to edit ideas -->

@@ -1,0 +1,13 @@
+<h1>Add a New Image</h1>
+
+<h2>Please enter your image:</h2>
+<%= form_for @image do |f| %>
+  <%= f.label "Name:" %>
+  <%= f.text_field  :name %><br/>
+
+  <%= f.label "Url:" %>
+  <%= f.text_field  :url %><br/>
+
+  <%= f.submit      "Add Image" %>
+<% end %>
+
